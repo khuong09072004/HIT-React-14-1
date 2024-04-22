@@ -1,10 +1,9 @@
-import React, { useState } from "react";
-import './CurdProducts.scss';
+
+import React ,{useState} from 'react';
+import '../Blog/Blog.scss';
 
 
-const CurdProducts =()=> {
-
-
+function Blog() {
     const [products, setProducts] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
@@ -34,9 +33,9 @@ const CurdProducts =()=> {
         setShowModal(false);
     };
 
-    function handleDelete(id) {
+    const handleDelete = (id) => {
         setProducts(products.filter((product) => product.id !== id));
-    }
+    };
 
     return (
         <div className="curd-products">
@@ -58,7 +57,7 @@ const CurdProducts =()=> {
                     <tbody>
                         {products.map((product) => (
                             <tr key={product.id}>
-                                <td>{product.id+1}</td>
+                                <td>{product.id}</td>
                                 <td>
                                     <img src={product.image} alt={product.name} />
                                 </td>
@@ -112,5 +111,14 @@ const CurdProducts =()=> {
             </div>
         </div>
     );
+
+
+   
+
+
+
+
+   
 }
-export default CurdProducts;
+
+export default Blog;
