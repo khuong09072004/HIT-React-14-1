@@ -2,6 +2,7 @@ import React from "react";
 import { Field, Form, Formik, useFormik } from 'formik';
 import * as Yup from 'yup';
 import { loginValidate } from '../ultis/loginValidate'
+import "../Register/Register.scss"
 function Register() {
     // const formik =useFormik({
     //     initialValues:{
@@ -37,60 +38,69 @@ function Register() {
 
 
     return (
-        <>
+        <div className="register">
             <Formik
                 initialValues={{
-                    fullname: '',
-                    email: '',
-                    password: ''
+                    username: "",
+                    password: "",
                 }}
-                validationSchema={
-                    loginValidate
+                validationSchema={loginValidate}
+                onSubmit={async(values)=>{
+                    try{
+                        const {data} = await axios.post(" https://reqres.in/api/login",values);
+                        localStorage.setItem("login",data.token);// luu gia tri
+                        sessionStorage.setItem("login1",data.token);
 
-
-
-                }
-                onSubmit={(data) => {
-                    console.log(data)
+                        console.log(data);
+                    }catch(error){
+                        console.log(error);
+                    }
                 }}
-
+                // onSubmit={(data) => console.log(data)}
             >
-                {({ errors, touched, handleSubmit }) => (
-                    <Form onSubmit={handleSubmit} >
-                        <label htmlFor="fullname">FullName:</label>
+                {({ errors, touched }) => (
+                    <Form >
+                        <div className="input">
+                            <Field
+                                type="text"
+                                name="username"
+                                id="username"
+                                placeholder="username"
 
-                        <Field
-                            type="text"
-                            name="fullname"
+                            />
+                            {errors.username && touched.username &&
+                                 <p className="error"> <RiErrorWarningFill /> {errors.username}</p>
+                            }
+                        </div>
+                        <div className="input">
+                            <Field
+                                type="password"
+                                name="password"
+                                id="password"
+                                placeholder="password"
+                            />
+                            {errors.password && touched.password &&
+                               <p className="error">   <RiErrorWarningFill />{errors.password}</p>
+                            }
+                        </div>
 
+                        <button type="submit" >Register</button>
+                        <div className="footer">
+                        <p>Not Login ? <a href="#">Create an account</a> </p>
+                        </div>
 
-
-                        />
-                        <h1>Register</h1>
-                        {errors.fullname && touched.fullname && <p style={{ color: 'red'}}>{errors.fullname}</p>}
-                        <br /><br />
-                        <label htmlFor="email">email:</label>
-                        <Field
-                            type="text"
-                            name="email"
-                            id="email"
-
-
-                        />
-                        {errors.email && touched.email && <p style={{ color: 'red' }}>{errors.email}</p>}
-                        <br /><br />
-                        <label htmlFor="password">Password:</label>
-                        <Field type="password" name="password" />
-                        {errors.password && touched.password && <p style={{ color: 'red' }}>{errors.password}</p>}
-                        <br /><br />
-                        <button type="submit">Register</button>
                     </Form>
+
                 )}
+
 
             </Formik>
 
 
-        </>
+
+        </div>
+
+
     );
 };
 

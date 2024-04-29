@@ -4,6 +4,7 @@ import '../Login/Login.scss'
 import * as Yup from 'yup';
 import { loginValidate } from "../ultis/loginValidate";
 import { RiErrorWarningFill } from "react-icons/ri";
+import axios from 'axios'
 
 function Login() {
 
@@ -15,7 +16,18 @@ function Login() {
                     password: "",
                 }}
                 validationSchema={loginValidate}
-                onSubmit={(data) => console.log(data)}
+                onSubmit={async(values)=>{
+                    try{
+                        const {data} = await axios.post(" https://reqres.in/api/login",values);
+                        localStorage.setItem("login",data.token);// luu gia tri
+                        sessionStorage.setItem("login1",data.token);
+
+                        console.log(data);
+                    }catch(error){
+                        console.log(error);
+                    }
+                }}
+                // onSubmit={(data) => console.log(data)}
             >
                 {({ errors, touched }) => (
                     <Form >

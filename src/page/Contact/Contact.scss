@@ -1,0 +1,77 @@
+.banner1 {
+    height: 84vh;
+    background: url("../../assets/images/imgbanner.jpg") center no-repeat;
+    background-size: auto;
+    background-position: center;
+    position: relative;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+
+
+    h1 {
+        font-size: 3rem;
+        color: #fff;
+        position: absolute;
+        z-index: 8;
+        width: 50%;
+        margin: 0 auto 1.25rem;
+        line-height: 1.5;
+        text-align: center;
+        margin-top: 150px;
+
+
+
+
+    }
+
+
+}
+.content1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+    padding: 7rem 0;
+
+    .conten1-container {
+        width: 80%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .content1-items {
+            width: 33%;
+            padding: 0 2.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            .icon {
+                font-size: 3.5rem;
+                color: #0d6efd;
+                margin: 0 0 1rem;
+
+            }
+
+            h2 {
+                font-size: 1.75rem;
+                font-weight: 600;
+                margin: .75rem 0;
+                color: #212529;
+                line-height: 1.5;
+            }
+
+            p {
+                font-size: 1.25rem;
+                font-weight: 100;
+                color: #656769;
+                font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                text-align: center;
+            }
+        }
+    }
+
+
+}

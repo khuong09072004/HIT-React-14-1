@@ -40,7 +40,7 @@ function UserProfile() {
                     <div className="content">
                         <div className="content-left">
                             <h1>User profile</h1>
-                            <Formik
+                            {/* <Formik
                                 initialValues={{
                                     username: " Ben Sherman",
                                     email: "ben.sherman@gmail.com",
@@ -146,7 +146,7 @@ function UserProfile() {
                                 )}
 
 
-                            </Formik>
+                            </Formik> */}
                         </div>
                     </div>
                 </div>
