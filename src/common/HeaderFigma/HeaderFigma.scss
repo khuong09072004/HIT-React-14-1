@@ -1,0 +1,68 @@
+header {
+    .container {
+        display: flex;
+        justify-content: space-between;
+
+        .top {
+            display: flex;
+            align-items: flex-end;
+
+            .left {
+                width: 26.82px;
+                height: 23.05px;
+                border-radius: 20px;
+                background: #9C69E2;
+
+            }
+
+            .right {
+                width: 26.82px;
+                height: 40.34px;
+                border-radius: 20px;
+                background: #F063B8;
+            }
+        }
+
+        button {
+            box-shadow: 0px 5px 5px 0px #4B5D681A;
+            background: #9C69E2;
+            width: 146px;
+            height: 49.63px;
+            top: 48px;
+            left: 1311px;
+            border-radius: 50px;
+            opacity: 0px;
+
+
+
+        }
+
+        .islogin {
+            ul {
+                display: flex;
+                list-style-type: none;
+
+                li {
+                    width: 146px;
+                    height: 49.63px;
+                    box-shadow: 0px 5px 5px 0px #4B5D681A;
+                    background: #9C69E2;
+                    border-radius: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin-right: 20px;
+
+
+                    a {
+                        color: #ffffff;
+                       
+                        
+
+                    }
+                }
+            }
+
+        }
+    }
+}

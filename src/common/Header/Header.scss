@@ -1,0 +1,31 @@
+header{
+    
+    background-color: #fff;
+    padding: 12px 100px;
+
+    .container{
+        display: flex;
+        justify-content: space-between;
+
+       a{
+        color: rgb(9, 9, 9);
+        text-decoration: none;
+        h1{
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 40px;
+        }
+       }
+       button{
+        padding: 15px 15px;
+        border: none;
+        background-color: #0d6efd;
+        color: #fff;
+        outline: none;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border-radius: 5px;
+        letter-spacing: 1px;
+       }
+    }
+}

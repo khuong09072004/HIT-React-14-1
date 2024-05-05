@@ -8,7 +8,7 @@ const CurdProducts =()=> {
     const [products, setProducts] = useState([]);
     const [showModal, setShowModal] = useState(false);
     const [formData, setFormData] = useState({
-        id: '1',
+        id: '',
         image: '',
         name: '',
         description: '',
@@ -42,16 +42,16 @@ const CurdProducts =()=> {
         <div className="curd-products">
             <div className="container-curd-products">
                 <header>
-                    <h1>Quản lí Products</h1>
-                    <button onClick={handleShow} className="add">Thêm sản phẩm</button>
+                    
+                    <button onClick={handleShow} className="add">Add new</button>
                 </header>
                 <table>
                     <thead>
                         <tr>
                             <th>ID</th>
-                            <th>Ảnh</th>
-                            <th>Tên sản phẩm</th>
-                            <th>Mô tả</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Tags</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -79,7 +79,7 @@ const CurdProducts =()=> {
                             <span className="close" onClick={handleClose}>
                                 &times;
                             </span>
-                            <h2>Thêm sản phẩm</h2>
+                            <h2>Add new</h2>
                             <form>
                                 <label htmlFor="image">Ảnh:</label>
                                 <input

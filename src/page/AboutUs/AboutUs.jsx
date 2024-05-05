@@ -1,7 +1,7 @@
 import React from "react";
 import "../AboutUs/AboutUs.scss"
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
+import Header from "../../common/Header/Header"
+import Footer from "../../common/Footer/Footer"
 import Content4 from "../../assets/images/content4.jpg";
 import Content5 from "../../assets/images/content5.jpg";
 import Content6 from "../../assets/images/content6.jpg";
